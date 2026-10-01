@@ -118,6 +118,7 @@
 		<p>Removed.</p>
 	{:else}
 		<p>{moves_string}.</p>
+		<a class="cdbutton learn" href="/rep/study/{id}">Open study</a>
 		<button class="remove" title="Remove study from repertoire" on:click={confirmRemoval}>&#x2715;</button>
 	{/if}
 	{#if removedOnLichess}
@@ -151,6 +152,12 @@
 <style>
 	p {
 		margin:0;
+	}
+	a.learn {
+		display:inline-block;
+		margin-top:8px;
+		color:inherit;
+		text-decoration:none;
 	}
 	button.remove {
 		position:absolute;

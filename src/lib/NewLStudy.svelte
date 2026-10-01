@@ -72,6 +72,7 @@
 	<button class="hide" title="Remove study from this list" on:click={hide}>&#x2715;</button>
 	{#if adding_state == 0}
 		<button class="cdbutton add" on:click|preventDefault={()=>adding_state=1}>+ add to repertoire</button>
+		<a class="cdbutton learn" href="/rep/study/{id}">Open study</a>
 	{:else if adding_state == 1}
 		<p in:slide|local>Which color?
 			<button class="add_white" on:click|once={addWhite}>White</button>
@@ -108,6 +109,12 @@
 	}
 	button.add_black:hover {
 		background-color:#333;
+	}
+	a.learn {
+		display:inline-block;
+		margin-top:8px;
+		color:inherit;
+		text-decoration:none;
 	}
 	button.add, button.add_white, button.add_black {
 		margin-top:8px;

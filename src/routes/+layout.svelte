@@ -1,5 +1,7 @@
 <script>
 	import '../app.css';
+	import '$lib/theme.css';
+	import ThemePicker from '$lib/ThemePicker.svelte';
 	import NavLinks from '$lib/NavLinks.svelte';
 	import { Modals, closeModal } from 'svelte-modals'
 	import { fade } from 'svelte/transition';
@@ -23,13 +25,14 @@
 
 	<div class="footer">
 		<ul>
+			<li><ThemePicker /></li>
 			<!--<li><a href="https://github.com/gtim/chessdriller" target="_blank" rel="noopener noreferrer">source code</a></li>-->
 			<li>
 				<!-- feedback SVG from Remixicon -->
 				<button on:click={()=>openModal(FeedbackModal)}>
 					Feedback
 					<svg style="height:18px;vertical-align:middle;margin-bottom:2px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-						<path fill="#800020" d="M6.45455 19L2 22.5V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H6.45455ZM4 18.3851L5.76282 17H20V5H4V18.3851ZM11 13H13V15H11V13ZM11 7H13V12H11V7Z"></path>
+						<path style="fill:var(--accent)" d="M6.45455 19L2 22.5V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H6.45455ZM4 18.3851L5.76282 17H20V5H4V18.3851ZM11 13H13V15H11V13ZM11 7H13V12H11V7Z"></path>
 					</svg>
 				</button>
 			</li>
@@ -77,7 +80,7 @@
 		font-size:14px;
 	}
 	.footer li + li {
-		border-color:rgba(40,43,40,0.3); /* #282B28 */
+		border-color:var(--border);
 		border-style:solid;
 		border-width:0 0 0 1px;
 	}
@@ -85,7 +88,7 @@
 		background: none!important;
 		border: none;
 		padding: 0!important;
-		color:#800020;
+		color:var(--accent);
 		text-decoration: none;
 		cursor: pointer;
 	}

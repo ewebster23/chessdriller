@@ -58,7 +58,7 @@
 		background: none!important;
 		border: none;
 		padding: 0!important;
-		color:#800020;
+		color:var(--accent);
 		text-decoration: none;
 		cursor: pointer;
 		font-size:16px;

@@ -70,9 +70,9 @@
 <style>
 	div.pgn {
 		position:relative;
-		background-color:#FFF6ED;
+		background-color:var(--panel);
 		border-radius:4px;
-		border-color:rgba(40,43,40,0.3); /* #282B28 */
+		border-color:var(--border);
 		border-style:solid;
 		border-width:1px;
 		padding:8px 16px 8px 12px;
@@ -98,7 +98,7 @@
 		background:none;
 		border:none;
 		cursor:pointer;
-		color:#800020;
+		color:var(--accent);
 	}
 	button.delete:hover {
 		font-weight:bold;

@@ -38,7 +38,7 @@
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border-top: 2px solid #800020;
+	border-top: 2px solid var(--accent);
 	border-right: 2px solid transparent;
 	animation: spinner 1s linear infinite;
 }

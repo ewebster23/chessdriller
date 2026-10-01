@@ -308,7 +308,7 @@
 							on:click={openOnLichess}
 						>Lichess
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-							<path fill="none" stroke="#800020" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+							<path fill="none" style="stroke:var(--accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"/>
 						</svg>
 						</button>
 					</div>
@@ -357,7 +357,7 @@
 		text-align:center;
 	}
 	.prev_position, .analyze_external{
-		color: #800020;
+		color: var(--accent);
 		border:none;
 		display:flex;
 		align-items:center;

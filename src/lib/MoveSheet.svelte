@@ -42,7 +42,7 @@
 		width:fit-content;
 		white-space:nowrap;
 		padding:0 8px;
-		border-color:rgba(40,43,40,0.3); /* #282B28 */
+		border-color:var(--border);
 		border-style:solid;
 		border-width:0 0 1px 0;
 		margin:0 8px 2px 8px;

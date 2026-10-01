@@ -1,0 +1,226 @@
+/*
+ * Site themes and chessboard themes, selected by attributes on <html> (set from
+ * localStorage by a script in app.html before first paint; see theme.js).
+ * The default look, "Parchment" with the "Classic" board, needs no attribute and
+ * is defined by :root in app.css.
+ */
+
+/* ---------- Site themes ---------- */
+
+html[data-theme='slate'] {
+	color-scheme: light;
+	--bg: #EDF1F6; --panel: #FFFFFF; --panel-hover: #E3EAF3;
+	--text: #1F2933; --text-2: #3E4C59; --muted: #6B7886;
+	--accent: #2F5D9E; --accent-hover: #244A80; --on-accent: #fff;
+	--border: rgba(31,41,51,0.25); --border-soft: rgba(31,41,51,0.15); --border-strong: rgba(31,41,51,0.5); --track: rgba(31,41,51,0.12);
+	--note-bg: #E8F0FB; --warn-bg: #FFF3D6; --warn-border: #D7B56A;
+	--danger: #B3261E; --danger-bg: rgba(255,205,200,0.6); --success: #2E7D4F;
+	--badge-learned: #F6E3A9; --badge-practicing: #CFE8C8; --meter-learned: #D39A1F;
+	--overlay: rgba(237,241,246,0.92);
+}
+
+html[data-theme='forest'] {
+	color-scheme: light;
+	--bg: #EAF1E6; --panel: #F8FBF5; --panel-hover: #DCE8D5;
+	--text: #1F2D1F; --text-2: #3B4D3B; --muted: #667A66;
+	--accent: #2F6B3A; --accent-hover: #245530; --on-accent: #fff;
+	--border: rgba(31,45,31,0.28); --border-soft: rgba(31,45,31,0.16); --border-strong: rgba(31,45,31,0.55); --track: rgba(31,45,31,0.13);
+	--note-bg: #EAF3D8; --warn-bg: #FFF0CF; --warn-border: #CDAE62;
+	--danger: #A12A1B; --danger-bg: rgba(255,208,196,0.65); --success: #2F7A3E;
+	--badge-learned: #F2E2A0; --badge-practicing: #CDE6B4; --meter-learned: #C98A1B;
+	--overlay: rgba(234,241,230,0.92);
+}
+
+html[data-theme='dark'] {
+	color-scheme: dark;
+	--bg: #1C1D20; --panel: #26282C; --panel-hover: #31343A;
+	--text: #E8E8E6; --text-2: #C7C7C4; --muted: #9A9A98;
+	--accent: #E8728A; --accent-hover: #F08DA0; --on-accent: #1C1D20;
+	--border: rgba(255,255,255,0.2); --border-soft: rgba(255,255,255,0.12); --border-strong: rgba(255,255,255,0.4); --track: rgba(255,255,255,0.14);
+	--note-bg: #3A3322; --warn-bg: #3A3322; --warn-border: #8A7340;
+	--danger: #FF8A80; --danger-bg: rgba(255,138,128,0.18); --success: #5FBF7F;
+	--badge-learned: #5B4A1E; --badge-practicing: #33492B; --meter-learned: #D9A441;
+	--overlay: rgba(28,29,32,0.92);
+}
+
+html[data-theme='midnight'] {
+	color-scheme: dark;
+	--bg: #0F1724; --panel: #17233A; --panel-hover: #1F2F4D;
+	--text: #E3E9F4; --text-2: #BAC6DC; --muted: #8393AE;
+	--accent: #6EA8FE; --accent-hover: #8FBCFF; --on-accent: #0F1724;
+	--border: rgba(160,185,230,0.28); --border-soft: rgba(160,185,230,0.16); --border-strong: rgba(160,185,230,0.5); --track: rgba(160,185,230,0.18);
+	--note-bg: #1D2E4D; --warn-bg: #3A3320; --warn-border: #8A7340;
+	--danger: #FF8A80; --danger-bg: rgba(255,138,128,0.18); --success: #5FBF7F;
+	--badge-learned: #4B4020; --badge-practicing: #24432F; --meter-learned: #D9A441;
+	--overlay: rgba(15,23,36,0.92);
+}
+
+/*
+ * Cozy Wood: a skeuomorphic theme in the spirit of 2007-era iPhone games. The page is a wooden
+ * tabletop, the content a stitched cream card laid on it, buttons are glossy and embossed.
+ * All CSS: no images. Text on the wood itself (nav, footer) is light; inside the card it is dark.
+ */
+
+html[data-theme='wood'] {
+	color-scheme: light;
+	--bg: #F3E3C3; --panel: #FBF1DC; --panel-hover: #F0DFBD;
+	--text: #3B2413; --text-2: #5A3D26; --muted: #86694D;
+	--accent: #C2571A; --accent-hover: #A64812; --on-accent: #FFF4E0;
+	--border: rgba(80,48,22,0.4); --border-soft: rgba(80,48,22,0.22); --border-strong: rgba(80,48,22,0.7); --track: rgba(80,48,22,0.2);
+	--note-bg: #FFE9B8; --warn-bg: #FFE0A8; --warn-border: #B98B3E;
+	--danger: #9C2B1B; --danger-bg: rgba(255,190,170,0.6); --success: #3F7A33;
+	--badge-learned: #F0CF86; --badge-practicing: #CFE0A0; --meter-learned: #D8902B;
+	--overlay: rgba(243,227,195,0.92);
+}
+
+html[data-theme='wood'] body {
+	background-color: #6B4428;
+	background-image:
+		repeating-linear-gradient(90deg, transparent 0 168px, rgba(0,0,0,0.38) 168px 170px, rgba(255,214,160,0.1) 170px 172px), /* plank seams */
+		repeating-linear-gradient(90deg, rgba(0,0,0,0.06) 0 1px, transparent 1px 5px, rgba(255,230,190,0.05) 5px 6px, transparent 6px 11px), /* grain */
+		repeating-linear-gradient(0deg, rgba(60,30,10,0.07) 0 2px, transparent 2px 9px),
+		radial-gradient(ellipse at 50% 15%, rgba(255,210,150,0.28), transparent 65%), /* lamp light */
+		linear-gradient(#7A4F2E, #55341C);
+	background-attachment: fixed;
+}
+
+/* the content card: cream paper with a leather rim and stitching */
+html[data-theme='wood'] .content {
+	margin: 10px 16px;
+	padding: 16px 20px;
+	background: linear-gradient(#FBF1DC, #F3E3C3);
+	border: 3px solid #3B2413;
+	border-radius: 16px;
+	box-shadow:
+		inset 0 0 0 2px rgba(255,236,200,0.65),
+		inset 0 2px 14px rgba(120,80,40,0.28),
+		0 8px 24px rgba(0,0,0,0.55);
+	outline: 2px dashed rgba(122,72,32,0.4);
+	outline-offset: -11px;
+}
+
+/* text sitting directly on the wood */
+html[data-theme='wood'] .header a,
+html[data-theme='wood'] .footer button {
+	color: #F8E7C4;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+html[data-theme='wood'] .header li + li,
+html[data-theme='wood'] .footer li + li {
+	border-color: rgba(255,235,200,0.35);
+}
+html[data-theme='wood'] .footer label {
+	color: #F3DDB0;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+html[data-theme='wood'] .footer button svg path {
+	fill: #F8E7C4;
+}
+
+/* embossed headings */
+html[data-theme='wood'] h1,
+html[data-theme='wood'] h2 {
+	font-family: Georgia, 'Times New Roman', serif;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+}
+
+/* glossy buttons */
+html[data-theme='wood'] .cdbutton,
+html[data-theme='wood'] .stages button,
+html[data-theme='wood'] .modes button {
+	background: linear-gradient(#FFF8E6 0%, #F2DDB0 50%, #E3C688 51%, #EBD39C 100%);
+	border: 1px solid #7A5230;
+	border-radius: 9px;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 1px 3px rgba(60,30,10,0.45);
+	text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+	color: #3B2413;
+}
+html[data-theme='wood'] .cdbutton:hover:not(:disabled),
+html[data-theme='wood'] .stages button:hover {
+	filter: brightness(1.06);
+}
+html[data-theme='wood'] .cdbutton:active:not(:disabled) {
+	box-shadow: 0 2px 4px rgba(60,30,10,0.5) inset;
+	filter: brightness(0.96);
+}
+html[data-theme='wood'] .nav button.go {
+	background: linear-gradient(#9BE08F 0%, #47A23F 48%, #2F8530 52%, #2A6E27 100%);
+	border: 1px solid #1F5A1E;
+	border-radius: 9px;
+	color: #F4FFEF;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset, 0 1px 3px rgba(40,60,20,0.55);
+}
+html[data-theme='wood'] .cdbutton.primary,
+html[data-theme='wood'] .stages button.active,
+html[data-theme='wood'] .modes button.active {
+	background: linear-gradient(#F7B070 0%, #DD7A32 48%, #C2571A 52%, #B24B12 100%);
+	border-color: #7B3409;
+	color: #FFF4E0;
+	text-shadow: 0 -1px 0 rgba(60,20,0,0.55);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.45) inset, 0 1px 3px rgba(60,30,10,0.55);
+}
+
+/* ---------- Chessboard themes ----------
+ * Each sets its square colors (--cg-light, --cg-dark) and a highlight color (--cg-hl).
+ * The squares are drawn as a repeating 2x2 checker; a1 (bottom left) is dark, as on a real board.
+ * "Classic" keeps the original hatched board from chessground.brown.css.
+ */
+
+html[data-board='brown']  { --cg-light: #F0D9B5; --cg-dark: #B58863; --cg-hl: rgba(20, 85, 30, 0.5); }
+html[data-board='green']  { --cg-light: #EEEED2; --cg-dark: #769656; --cg-hl: rgba(20, 85, 30, 0.5); }
+html[data-board='blue']   { --cg-light: #DEE3E6; --cg-dark: #8CA2AD; --cg-hl: rgba(20, 60, 110, 0.5); }
+html[data-board='purple'] { --cg-light: #EFEFEF; --cg-dark: #8877B7; --cg-hl: rgba(60, 40, 110, 0.5); }
+html[data-board='gray']   { --cg-light: #E6E6E6; --cg-dark: #9A9A9A; --cg-hl: rgba(30, 30, 30, 0.45); }
+
+html[data-board] cg-board {
+	background-color: var(--cg-light);
+	background-image: conic-gradient(
+		var(--cg-dark) 0 25%, var(--cg-light) 0 50%,
+		var(--cg-dark) 0 75%, var(--cg-light) 0
+	);
+	background-size: 25% 25%;
+	outline: solid 1px var(--cg-dark);
+}
+
+html[data-board] cg-board square.move-dest {
+	background: radial-gradient(var(--cg-hl) 22%, rgba(0, 0, 0, 0) 0);
+}
+html[data-board] cg-board square.move-dest:hover {
+	background: radial-gradient(var(--cg-hl) 44%, rgba(0, 0, 0, 0) 0);
+}
+html[data-board] cg-board square.oc.move-dest {
+	background: radial-gradient(transparent 0%, transparent 80%, var(--cg-hl) 80%);
+}
+html[data-board] cg-board square.oc.move-dest:hover {
+	background: radial-gradient(transparent 0%, transparent 70%, var(--cg-hl) 75%);
+}
+html[data-board] cg-board square.selected {
+	background-color: var(--cg-hl);
+}
+
+/* coordinate labels: dark text on light squares and light text on dark ones */
+html[data-board] .cg-wrap.orientation-white coords.ranks coord:nth-child(2n),
+html[data-board] .cg-wrap.orientation-white coords.files coord:nth-child(2n),
+html[data-board] .cg-wrap.orientation-black coords.ranks coord:nth-child(2n + 1),
+html[data-board] .cg-wrap.orientation-black coords.files coord:nth-child(2n + 1) {
+	color: var(--cg-dark);
+}
+html[data-board] .cg-wrap.orientation-black coords.ranks coord:nth-child(2n),
+html[data-board] .cg-wrap.orientation-black coords.files coord:nth-child(2n),
+html[data-board] .cg-wrap.orientation-white coords.ranks coord:nth-child(2n + 1),
+html[data-board] .cg-wrap.orientation-white coords.files coord:nth-child(2n + 1) {
+	color: var(--cg-light);
+}
+
+/* "Wood": glossy varnished squares in a wooden frame */
+html[data-board='wood'] { --cg-light: #EBCB98; --cg-dark: #A56B35; --cg-hl: rgba(20, 85, 30, 0.5); }
+html[data-board='wood'] cg-board {
+	background-image:
+		linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 45%, rgba(0,0,0,0.14) 100%), /* gloss */
+		repeating-linear-gradient(90deg, rgba(60,30,10,0.05) 0 2px, transparent 2px 7px), /* grain */
+		conic-gradient(var(--cg-dark) 0 25%, var(--cg-light) 0 50%, var(--cg-dark) 0 75%, var(--cg-light) 0);
+	background-size: 100% 100%, 100% 100%, 25% 25%;
+}
+html[data-board='wood'] .cg-wrap {
+	box-shadow: 0 0 0 5px #6B4226, 0 0 0 6px #3B2413, 0 4px 14px rgba(0,0,0,0.45);
+}

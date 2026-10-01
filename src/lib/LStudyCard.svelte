@@ -38,9 +38,9 @@
 		position:relative;
 		width:350px;
 		max-width:100%;
-		background-color:#FFF6ED;
+		background-color:var(--panel);
 		border-radius:4px;
-		border-color:rgba(40,43,40,0.3); /* #282B28 */
+		border-color:var(--border);
 		border-style:solid;
 		border-width:1px;
 	}

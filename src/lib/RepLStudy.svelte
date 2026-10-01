@@ -158,7 +158,7 @@
 		background:none;
 		border:none;
 		cursor:pointer;
-		color:#800020;
+		color:var(--accent);
 	}
 	button.remove:hover {
 		font-weight:bold;

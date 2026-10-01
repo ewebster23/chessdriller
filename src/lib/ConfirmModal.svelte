@@ -48,7 +48,7 @@
 		max-width: 512px;
 		border-radius: 6px;
 		padding: 16px;
-		background-color: #FAF0E6;
+		background-color: var(--bg);
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;

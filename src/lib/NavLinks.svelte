@@ -27,7 +27,7 @@
 		padding:0px 8px;
 	}
 	li + li {
-		border-color:rgba(40,43,40,0.3); /* #282B28 */
+		border-color:var(--border);
 		border-style:solid;
 		border-width:0 0 0 1px;
 	}

@@ -8,6 +8,18 @@
 		<link rel="manifest" href="/site.webmanifest">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="theme-color" content="#FAF0E6">
+		<script>
+			// apply the saved site/board theme before first paint (see src/lib/theme.js)
+			try {
+				var d = document.documentElement, t = localStorage.getItem('chessdriller:theme'), b = localStorage.getItem('chessdriller:board');
+				if (t) d.dataset.theme = t;
+				if (b) {
+					d.dataset.board = b;
+					// matching pieces; written with document.write so they block painting and don't flash the default pieces
+					if (/^[a-z]+$/.test(b)) document.write('<link id="piece-theme" rel="stylesheet" href="/pieces/' + b + '.css">');
+				}
+			} catch (e) {}
+		</script>
 		<title>Chessdriller</title>
 		%sveltekit.head%
 	</head>
